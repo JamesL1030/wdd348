@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
-import WeatherAPI from './pages/WeatherAPI';
+import UserInput from './components/UserInput'
+
+
 
 function App() {
   return (
-    <div className="App">
-      <WeatherAPI />
-    </div>
+      <div className="App">
+        <UserInput />
+      </div>
   );
 }
 
