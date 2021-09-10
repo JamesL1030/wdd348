@@ -6,23 +6,26 @@ function MiamiAPI() {
     const [weatherData, setWeatherData] = useState(null);
     useEffect(() => {
         async function fetchAPI(){
-            const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Miami&appid=108bed69d959699fe0a38d8164dbc3bb');
+            const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Miami&appid=108bed69d959699fe0a38d8164dbc3bb&&units=imperial');
             const data = await response.json();
-            const [currentWeather] = data.weather;
+            const currentWeather = data;
             setWeatherData(currentWeather);
         }
         fetchAPI();
     }, []);
 
     return (
-        <div>         
+        <div>          
             {weatherData &&<APIOutput 
-                weatherMain={weatherData.main}
-                weatherDescription={weatherData.description}  
-                weatherIcon={weatherData.icon}                   
+                locationName={weatherData.name}
+                weatherTemp={weatherData.main.temp_max}
+                weatherMain={weatherData.weather.main}
+                weatherDescription={weatherData.weather.description}  
+                weatherIcon={weatherData.weather.icon}  
             />}
         </div>
     );
 }
 
 export default MiamiAPI;
+
