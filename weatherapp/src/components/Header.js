@@ -15,9 +15,9 @@ const styles = {
         display: 'flex',
         borderBottom: '1px solid #232323',
         padding: '1.2em',
-        height: '100px',
+        height: '42px',
         justifyContent: 'space-between',
-        backgroundColor: 'green'
+        backgroundColor: '#12232E'
     }
 
 }
