@@ -21,7 +21,7 @@ function MiamiAPI() {
                 weatherTemp={weatherData.main.temp_max}
                 weatherMain={weatherData.weather.main}
                 weatherDescription={weatherData.weather.description}  
-                weatherIcon={weatherData.weather.icon}  
+                weatherIcon={weatherData.weather.icon} 
             />}
         </div>
     );
