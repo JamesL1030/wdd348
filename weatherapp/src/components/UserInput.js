@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import Header from '../components/Header';
 import InputBox from './InputBox';
 import MyButton from './MyButton';
@@ -9,7 +10,7 @@ import GridHagerstownAPI from './GridHagerstownAPI';
 import GridMiamiAPI from './GridMiamiAPI';
 import GridOrmondAPI from './GridOrmondAPI';
 
-function UserInput() {
+const UserInput = () => {
     return(     
         <div style={styles.container}>
             <Header />
@@ -18,16 +19,16 @@ function UserInput() {
             </div>
             <MyButton buttonText='Search' />
             <div style={styles.row}>
-                <GridMiamiAPI />
-                <GridOrmondAPI />
+                <NavLink to="/MiamiAPI"><GridMiamiAPI /></NavLink>
+                <NavLink to="/OrmondBeachAPI"><GridOrmondAPI /></NavLink>
             </div>
             <div style={styles.row}>
-                <GridBaltimoreAPI />
-                <GridOrlandoAPI />
+                <NavLink to="/BaltimoreAPI"><GridBaltimoreAPI /></NavLink>
+                <NavLink to="/OrlandoAPI"><GridOrlandoAPI /></NavLink>
             </div>
             <div style={styles.row}>
-                <GridDenverAPI />
-                <GridHagerstownAPI />
+                <NavLink to="/DenverAPI"><GridDenverAPI /></NavLink>
+                <NavLink to="/HagerstownAPI"><GridHagerstownAPI /></NavLink>
             </div> 
         </div>
     )
