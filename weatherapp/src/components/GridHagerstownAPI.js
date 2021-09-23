@@ -14,14 +14,23 @@ function GridHagerstownAPI() {
         fetchAPI();
     }, []);
 
+    const [arrayData, setuserData] = useState(null);
+    useEffect(() => {
+        async function fetchArrayAPI(){
+            const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Hagerstown&appid=108bed69d959699fe0a38d8164dbc3bb');
+            const data = await response.json();
+            const [myArray] = data.weather;
+            setuserData(myArray);
+        }
+        fetchArrayAPI();
+    }, []);
+
     return (
         <div>          
-            {weatherData &&<WeatherGrid
+            {arrayData && weatherData &&<WeatherGrid
                 hagerstownLocation={weatherData.name}
-                hagerstownTemp={weatherData.main.temp_max}
-                hagerstownMain={weatherData.weather.main}
-                hagerstownDescription={weatherData.weather.description}  
-                hagerstownIcon={weatherData.weather.icon} 
+                hagerstownTemp={weatherData.main.temp}
+                hagerstownIcon={arrayData.icon} 
             />}
         </div>
     );

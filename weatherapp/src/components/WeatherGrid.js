@@ -7,16 +7,22 @@ const WeatherGrid = props => {
                 <div style={styles.myBox}>
                     <h2>{props.ormondLocation}</h2>
                     <h2>{props.ormondTemp}</h2>
+                    <h2>{props.ormondIcon}</h2>
                     <h2>{props.miamiLocation}</h2>
                     <h2>{props.miamiTemp}</h2>
+                    <h2>{props.miamiIcon}</h2>
                     <h2>{props.hagerstownLocation}</h2>
                     <h2>{props.hagerstownTemp}</h2>
+                    <h2>{props.hagerstownIcon}</h2>
                     <h2>{props.baltimoreLocation}</h2>
                     <h2>{props.baltimoreTemp}</h2>
+                    <h2>{props.baltimoreIcon}</h2>
                     <h2>{props.orlandoLocation}</h2>
                     <h2>{props.orlandoTemp}</h2>
+                    <h2>{props.orlandoIcon}</h2>
                     <h2>{props.denverLocation}</h2>
                     <h2>{props.denverTemp}</h2>
+                    <h2>{props.denverIcon}</h2>
                 </div>
             </div>  
         </div>

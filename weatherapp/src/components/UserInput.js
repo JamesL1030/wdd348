@@ -19,8 +19,7 @@ const UserInput = () => {
             </div>
             <div style={styles.myBtn}>
                 <MyButton buttonText='Search' />
-            </div>
-            
+            </div>       
             <div style={styles.row}>
                 <NavLink to="/MiamiAPI"><GridMiamiAPI /></NavLink>
                 <NavLink to="/OrmondBeachAPI"><GridOrmondAPI /></NavLink>

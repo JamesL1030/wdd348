@@ -14,14 +14,23 @@ function OrmondAPI() {
         fetchAPI();
     }, []);
 
+    const [arrayData, setuserData] = useState(null);
+    useEffect(() => {
+        async function fetchArrayAPI(){
+            const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Ormond&appid=108bed69d959699fe0a38d8164dbc3bb');
+            const data = await response.json();
+            const [myArray] = data.weather;
+            setuserData(myArray);
+        }
+        fetchArrayAPI();
+    }, []);
+
     return (
         <div>       
-            {weatherData &&<WeatherGrid 
+            {arrayData && weatherData &&<WeatherGrid 
                 ormondLocation={weatherData.name}
-                ormondTemp={weatherData.main.temp_max}
-                ormondMain={weatherData.weather.main}
-                ormondDescription={weatherData.weather.description}  
-                ormondIcon={weatherData.weather.icon}  
+                ormondTemp={weatherData.main.temp} 
+                ormondIcon={arrayData.icon}  
             />}
         </div>
     );
