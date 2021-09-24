@@ -7,10 +7,9 @@ const APIOutput = props => {
             <Header />    
             <h2 style={styles.locationText}>{props.locationName}</h2>
             <div style={styles.myBox}>
-                <h1 style={styles.boxText}>{props.currentTemp}&deg;</h1>
-                <h1>{props.weatherMain}</h1>
-                <h1>{props.weatherDescription}</h1>
-                <h1>{props.weatherIcon}</h1>  
+                <h2 style={styles.boxContent}>{props.currentTemp}&deg;</h2>
+                <h2 style={styles.boxContent}>{props.weatherDescription}</h2>
+                <h2 style={styles.boxContent}>{props.weatherIcon}</h2>  
             </div>
             <div style={styles.myBox2}>
                 <div style={styles.box2Text}>High<h3>{props.maxTemp}</h3></div>
@@ -36,7 +35,12 @@ const styles = {
         height: '250px',
         width: '98%',
         backgroundColor: '#4DA8DA',
-        borderRadius: 10
+        borderRadius: 10,
+    },
+    boxContent: {
+        display: 'flex',
+        justifyContent: 'center',
+        color: '#fff'
     },
     myBox2: {
         margin: '2em auto',
@@ -46,7 +50,9 @@ const styles = {
         borderRadius: 10
     },
     locationText: {
-        color: '#EEFBFB'
+        color: '#EEFBFB',
+        display: 'flex',
+        justifyContent: 'center'
     },
     boxText: {
         color: '#EEFBFB'
