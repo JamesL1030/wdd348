@@ -14,14 +14,23 @@ function GridMiamiAPI() {
         fetchAPI();
     }, []);
 
+    const [arrayData, setuserData] = useState(null);
+    useEffect(() => {
+        async function fetchArrayAPI(){
+            const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Miami&appid=108bed69d959699fe0a38d8164dbc3bb');
+            const data = await response.json();
+            const [myArray] = data.weather;
+            setuserData(myArray);
+        }
+        fetchArrayAPI();
+    }, []);
+
     return (
-        <div>          
-            {weatherData &&<WeatherGrid
-                miamiLocation={weatherData.name}
-                miamiTemp={weatherData.main.temp_max}
-                miamiMain={weatherData.weather.main}
-                miamiDescription={weatherData.weather.description}  
-                miamiIcon={weatherData.weather.icon} 
+        <div>       
+            {arrayData && weatherData &&<WeatherGrid 
+                myLocation={weatherData.name}
+                myTemp={weatherData.main.temp} 
+                myIcon={arrayData.icon}  
             />}
         </div>
     );

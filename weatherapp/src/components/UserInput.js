@@ -10,14 +10,16 @@ import GridHagerstownAPI from './GridHagerstownAPI';
 import GridMiamiAPI from './GridMiamiAPI';
 import GridOrmondAPI from './GridOrmondAPI';
 
-const UserInput = () => {
+const UserInput = props => {
     return(     
         <div style={styles.container}>
             <Header />
             <div style={styles.inputBox}>
-                <InputBox  style={styles.inputBox} placeholderText='Search' />
+                <InputBox style={styles.inputBox} placeholderText='Search' />
             </div>
-            <MyButton buttonText='Search' />
+            <div style={styles.myBtn}>
+                <MyButton buttonText='Search' />
+            </div>       
             <div style={styles.row}>
                 <NavLink to="/MiamiAPI"><GridMiamiAPI /></NavLink>
                 <NavLink to="/OrmondBeachAPI"><GridOrmondAPI /></NavLink>
@@ -46,6 +48,13 @@ const styles = {
         justifyContent: 'space-between'
     },
     inputBox: {
-        margin: '1em 0'
+        display: 'flex',
+        margin: '1em auto',
+        justifyContent: 'center'
+    },
+    myBtn: {
+        display: 'flex',
+        justifyContent: 'center',
+        margin: '0 0 1em'
     }
 }
