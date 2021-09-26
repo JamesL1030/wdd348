@@ -26,11 +26,11 @@ function GridBaltimoreAPI() {
     }, []);
 
     return (
-        <div>          
-            {weatherData &&<WeatherGrid
-                baltimoreLocation={weatherData.name}
-                baltimoreTemp={weatherData.main.temp}
-                baltimoreIcon={arrayData.icon}
+        <div>       
+            {arrayData && weatherData &&<WeatherGrid 
+                myLocation={weatherData.name}
+                myTemp={weatherData.main.temp} 
+                myIcon={arrayData.icon}  
             />}
         </div>
     );

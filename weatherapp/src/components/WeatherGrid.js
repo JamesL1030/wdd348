@@ -1,30 +1,36 @@
-import React from 'react'
+import React from 'react';
+import mySun from '../Images/mySun.png';
+import cloudy from '../Images/cloudy.png';
+import partCloudy from '../Images/partCloudy.png';
+import moon from '../Images/moon.png';
 
 const WeatherGrid = props => {
+    var weatherIcon;
+    if (props.myIcon === '01d') {
+        weatherIcon = mySun
+    }
+    else if ((props.myIcon === '02d')) {
+        weatherIcon = partCloudy
+    }
+    else if ((props.myIcon === '03d')) {
+        weatherIcon = cloudy
+    }
+    else if ((props.myIcon === '04d')) {
+        weatherIcon = cloudy
+    }
+    else if ((props.myIcon === '05d')) {
+        weatherIcon = moon
+    }
+
     return (
-        <div>
-            <div>
-                <div style={styles.myBox}>
-                    <h2 style={styles.boxContent}>{props.ormondLocation}</h2>
-                    <h2 style={styles.boxContent}>{props.ormondTemp}</h2>
-                    <h2 style={styles.boxContent}>{props.ormondIcon}</h2>
-                    <h2 style={styles.boxContent}>{props.miamiLocation}</h2>
-                    <h2 style={styles.boxContent}>{props.miamiTemp}</h2>
-                    <h2 style={styles.boxContent}>{props.miamiIcon}</h2>
-                    <h2 style={styles.boxContent}>{props.hagerstownLocation}</h2>
-                    <h2 style={styles.boxContent}>{props.hagerstownTemp}</h2>
-                    <h2 style={styles.boxContent}>{props.hagerstownIcon}</h2>
-                    <h2 style={styles.boxContent}>{props.baltimoreLocation}</h2>
-                    <h2 style={styles.boxContent}>{props.baltimoreTemp}</h2>
-                    <h2 style={styles.boxContent}>{props.baltimoreIcon}</h2>
-                    <h2 style={styles.boxContent}>{props.orlandoLocation}</h2>
-                    <h2 style={styles.boxContent}>{props.orlandoTemp}</h2>
-                    <h2 style={styles.boxContent}>{props.orlandoIcon}</h2>
-                    <h2 style={styles.boxContent}>{props.denverLocation}</h2>
-                    <h2 style={styles.boxContent}>{props.denverTemp}</h2>
-                    <h2 style={styles.boxContent}>{props.denverIcon}</h2>
+        <div style={styles.myContainer}>
+            <div style={styles.myBox}>
+                <h2 style={styles.boxContent}>{props.myLocation}</h2>
+                <h2 style={styles.boxContent}>{props.myTemp}</h2>
+                <div style={styles.iconStyle}>
+                    <img src={weatherIcon} alt='weather icon'/>
                 </div>
-            </div>  
+            </div>
         </div>
     );
 }
@@ -38,11 +44,15 @@ const styles = {
         backgroundColor: '#4DA8DA',
         color: '#EEFBFB',
         borderRadius: 6,
-        margin: '.5em',
+        margin: '.5em'
     },
     boxContent: {
         display: 'flex',
         justifyContent: 'center',
         margin: 0
+    },
+    iconStyle: {
+        display: 'flex',
+        justifyContent: 'center'
     }
 }

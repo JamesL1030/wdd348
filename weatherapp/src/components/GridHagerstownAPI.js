@@ -26,11 +26,11 @@ function GridHagerstownAPI() {
     }, []);
 
     return (
-        <div>          
-            {arrayData && weatherData &&<WeatherGrid
-                hagerstownLocation={weatherData.name}
-                hagerstownTemp={weatherData.main.temp}
-                hagerstownIcon={arrayData.icon} 
+        <div>       
+            {arrayData && weatherData &&<WeatherGrid 
+                myLocation={weatherData.name}
+                myTemp={weatherData.main.temp} 
+                myIcon={arrayData.icon}  
             />}
         </div>
     );

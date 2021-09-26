@@ -28,9 +28,9 @@ function OrmondAPI() {
     return (
         <div>       
             {arrayData && weatherData &&<WeatherGrid 
-                ormondLocation={weatherData.name}
-                ormondTemp={weatherData.main.temp} 
-                ormondIcon={arrayData.icon}  
+                myLocation={weatherData.name}
+                myTemp={weatherData.main.temp} 
+                myIcon={arrayData.icon}  
             />}
         </div>
     );

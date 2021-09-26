@@ -26,11 +26,11 @@ function GridOrlandoAPI() {
     }, []);
 
     return (
-        <div>          
-            {arrayData && weatherData &&<WeatherGrid
-                orlandoLocation={weatherData.name}
-                orlandoTemp={weatherData.main.temp}
-                orlandoIcon={arrayData.icon} 
+        <div>       
+            {arrayData && weatherData &&<WeatherGrid 
+                myLocation={weatherData.name}
+                myTemp={weatherData.main.temp} 
+                myIcon={arrayData.icon}  
             />}
         </div>
     );

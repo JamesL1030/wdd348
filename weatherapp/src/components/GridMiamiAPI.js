@@ -26,11 +26,11 @@ function GridMiamiAPI() {
     }, []);
 
     return (
-        <div>          
-            {arrayData && weatherData &&<WeatherGrid
-                miamiLocation={weatherData.name}
-                miamiTemp={weatherData.main.temp}
-                miamiIcon={arrayData.icon} 
+        <div>       
+            {arrayData && weatherData &&<WeatherGrid 
+                myLocation={weatherData.name}
+                myTemp={weatherData.main.temp} 
+                myIcon={arrayData.icon}  
             />}
         </div>
     );

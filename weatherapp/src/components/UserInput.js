@@ -10,7 +10,7 @@ import GridHagerstownAPI from './GridHagerstownAPI';
 import GridMiamiAPI from './GridMiamiAPI';
 import GridOrmondAPI from './GridOrmondAPI';
 
-const UserInput = () => {
+const UserInput = props => {
     return(     
         <div style={styles.container}>
             <Header />
@@ -54,6 +54,7 @@ const styles = {
     },
     myBtn: {
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        margin: '0 0 1em'
     }
 }

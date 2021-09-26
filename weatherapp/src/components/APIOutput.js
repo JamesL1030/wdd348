@@ -1,7 +1,28 @@
 import React from 'react';
-import Header from '../components/Header'
+import Header from '../components/Header';
+import mySun from '../Images/mySun.png';
+import cloudy from '../Images/cloudy.png';
+import partCloudy from '../Images/partCloudy.png';
+import moon from '../Images/moon.png';
 
 const APIOutput = props => {
+    var myIcon;
+    if (props.weatherIcon === '01d') {
+        myIcon = mySun
+    }
+    else if ((props.weatherIcon === '02d')) {
+        myIcon = partCloudy
+    }
+    else if ((props.weatherIcon === '03d')) {
+        myIcon = cloudy
+    }
+    else if ((props.weatherIcon === '04d')) {
+        myIcon = cloudy
+    }
+    else if ((props.weatherIcon === '05d')) {
+        myIcon = moon
+    }
+
     return (   
         <div style={styles.container}>   
             <Header />    
@@ -9,7 +30,9 @@ const APIOutput = props => {
             <div style={styles.myBox}>
                 <h2 style={styles.boxContent}>{props.currentTemp}&deg;</h2>
                 <h2 style={styles.boxContent}>{props.weatherDescription}</h2>
-                <h2 style={styles.boxContent}>{props.weatherIcon}</h2>  
+                <div style={styles.iconStyle}>
+                    <img src={myIcon} alt='weather icon'/>
+                </div>
             </div>
             <div style={styles.myBox2}>
                 <div style={styles.box2Text}>High<h3>{props.maxTemp}</h3></div>
@@ -40,7 +63,8 @@ const styles = {
     boxContent: {
         display: 'flex',
         justifyContent: 'center',
-        color: '#fff'
+        color: '#fff',
+        fontSize: '2em'
     },
     myBox2: {
         margin: '2em auto',
@@ -56,6 +80,10 @@ const styles = {
     },
     boxText: {
         color: '#EEFBFB'
+    },
+    iconStyle: {
+        display: 'flex',
+        justifyContent: 'center'
     },
     box2Text: {
         borderBottom: '1px solid #D8D8D8',

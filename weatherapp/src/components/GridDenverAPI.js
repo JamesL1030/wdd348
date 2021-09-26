@@ -26,11 +26,11 @@ function GridDenverAPI() {
     }, []);
 
     return (
-        <div>          
-            {arrayData && weatherData &&<WeatherGrid
-                denverLocation={weatherData.name}
-                denverTemp={weatherData.main.temp}
-                denverIcon={arrayData.icon}
+        <div>       
+            {arrayData && weatherData &&<WeatherGrid 
+                myLocation={weatherData.name}
+                myTemp={weatherData.main.temp} 
+                myIcon={arrayData.icon}  
             />}
         </div>
     );
